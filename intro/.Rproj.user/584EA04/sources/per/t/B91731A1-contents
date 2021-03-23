@@ -1,0 +1,145 @@
+---
+title: "Introduction to R"
+author: "Ayesha Iftikhar"
+date: "October 21, 2020"
+output: html_document
+---
+
+
+
+# An Introduction to R Language 
+
+R language is an integrated suite for software facilities for data manipulation, calculation and graphical display.It can effectively handle data and also provide effective storage facility.R is very much a vehicle for newly developing methods of interactive data analysis. It has developed rapidly and has beeb extended by a large collection of packages.R can be regarded as an implementation of __S language__ which was developed at _Bell Laboratories_ by _Ruck Becker, John Chambers and ALlen Wilks_ and also forms the basis of the __S-PLUS__ systems.
+
+# R and Statistics
+
+* Many people using R as a statisitics system.
+It is basically an environment within which many classical and modern statistical techniques has been implemented. 
+    * Some of them are built into the R base environment,but most of them are supplied as packages.
+    * About __25 packages__ are supplied with R as _standard_ and _recommended_ packages.
+    * Many more packages are available through the __CRAN__ family of Internet Sites [CRAN Packages](https://CRAN.R-project.org) 
+    
+Many classical statistics and latest methodologies are available in R, bbut user always needs to prepare to do a little work to find it.As compared to other Statistical languages, R will give minimal output and store the results in a fit object for subsequent interrogation by further R functions.
+
+# Using R Interactively
+* It always issue a prompt when it expects an input commands.
+* The default prompt is ">" which is similar to UNIX and so it may appear that nothing is happening.
+
+## in using R under UNIX the suggested procedure for the first occasion is :
+Create a sub-directory, say _work_ by running the following few commads in terminal
+```{}
+  > mkdir work
+```
+make this directory a working directory 
+```{}
+  > cd work
+```
+Start the R program with the command
+```{}
+ > R
+```
+To quit the R program, use 
+```{}
+ > q()
+```
+
+# Getting help with funtions and features
+For getting help simply wirte help() in R console.
+```{}
+  > help()
+```
+For getting help about a specific topic write help(topic_name)
+```{}
+  > help(solve)
+```
+For getting help about features specified by special characters 
+```{}
+ > help("[[")
+```
+For getting help in HTML format write
+```{}
+ > help.start()
+```
+
+# R commands and case sensitivity
+* R is an expression language with a very simple syntax. 
+* It is a case sensitive language which means "IS" and "is" are to different elements.
+* R names can have aphanumeric symbols. And names are effectively unlimited in length.
+
+## Elementary Commands
+* These are either _expressions_ or _assignments_
+* **Expressions** is given as a command, 
+    * it is evaluated,
+    * Printed, 
+    * And the value is lost.
+* **Assignments** also evaluates as an expression and passes the values to a variable but the result is not automatically printed.
+* Commands are separated either by _semi-colon(;)_ or by _a newline_.
+* These commands can be grouped into compound experssions by usinf _braces('{}')_
+* Comments can be put almost everywhere by starting with a _hashmark('#')_.
+
+## Executing commands from diverting output to a file
+* if commands are stored in external file, in the working directory you can use those commands using funtion _source_
+```{}
+ > source(filename.r)
+```
+* Window Source is also available in __file__ menu.The function _sink_
+```{}
+  > sink("record.lis") # will store the output from console to external file
+  > sink() # will restores the console once again.
+```
+## Data Permanency and removing objects
+
+Entities that are created in R are known as objects.These may be variables, arrays of numbers, character stings, functions or more general structure built from such components.During a R session, objects are created and stored by names and the R command
+
+```{}
+  > objects()
+  # to display the name of the objects use
+  > ls()
+```
+
+_The collection of objects currently stored is called a __workspace___.
+
+* To remove objects the function is rm:
+```{}
+  > rm(object_name)
+```
+
+# Some Common and Important Commands
+
+For installing packages
+```{}
+ > install.packages("package_name") 
+```
+For updating a particular package
+```{}
+  update.packages("package_name") 
+```
+Getting list of previously installed packages
+```{}
+  > old.packages() 
+```
+Unload package
+```{}
+ > detach("packagename") 
+```
+Uninstall a package
+```{}
+ > remove.packages("packagename")
+```
+Check R Language Version
+```{}
+ > version()
+```
+Check working Directory for storing R files
+```{}
+ > getwd()
+```
+Checking Available Directories in Working directory
+```{}
+ > dir()
+```
+Checking of available code files in R workspace
+```{}
+  > ls()
+```
+

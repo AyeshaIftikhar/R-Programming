@@ -1,0 +1,32 @@
+---
+title: "Arrays and Matrices"
+author: "Ayesha Iftikhar"
+date: "12/2/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Arrays
+An array can be considered as a multiply subscripted collection of data entries, for example numeric. R allows simple facilities for creating and handling arrays, and in particular the special case of matrices.
+
+A __Dimension Vector__ is a vector of non-negatice integers.If it has length _k_ then the array is _k_-dimensional. __For example__, a matrix is a 2-dimentional array. 
+The dimensions are indexed from one up to the values given in the diment vector, Any vector in R can be used as array if it has a dimension vector as its _dim_ attributes.
+For example, vec is a vector of 9 elements.Then the assignment of dimension will be like this
+```{r}
+vec <- 1:9
+vec
+dim(vec) <- c(3,3)
+vec
+```
+__Note:__ Elements of vector should be equal to the product of dimension vectors.
+## Array Indexing, Subsections of an array
+* Individual elements of an array may be referenced by giving the name of the array followed by the subscripts in square brackets, separated by commas.
+* More generally, subsections of an array may be specified by giving a sequence of index vectors in place of subscripts. 
+* If any index position is given an empty index vector, then the full range of that subscript is taken.
+
+
+
+

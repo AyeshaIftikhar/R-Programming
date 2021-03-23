@@ -1,0 +1,94 @@
+---
+title: "Ch#03 R Objects"
+author: "Ayesha Iftikhar"
+date: "12/2/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# R Objects
+
+# 3.1 Instrinstic attributes: mode and length
+R operates on objects(entities to work with).
+
+## Mode
+
+* Vectors of numeric. complex or logical values are known as __Atomic__ structures since their components are all of the same type/mode. 
+  * Vectors must have their values of _same mode_. 
+  * A vector can be empty and still have a mode at same time.
+  
+* R also operates on __lists__. which will belongs to mode __lists__. These are ordered sequence of objects which individually can be of any mode. Lists are known as __recursive__ rather than atomic structures since their components can themselves be lists in their own space.
+
+Other recursive structure are those of mode __functions__ and __expressions__. 
+
+When we talked about mode of an object, we are talking about the basic type of its fundamental constituents.This is the special case of a property of object.
+
+## Length
+Length is the number of elements that is present in an object, or we can say that number of elements that are stored against an object.
+
+* The length and mode of an object can be found by using the following functions:
+```{}
+  mode(object_name) # return the mode of an object
+  length(object_name) # returns length of an object
+
+```
+
+* We can also find other attributes of an object by using following function:
+```{}
+  attributes(object_name) # it will return attributes of an object if any
+```
+
+## Changing mode of an object
+We can change the mode of any object if needed to do so, Like
+```{r}
+# R caters for change of mode
+x <- 0:9 
+x #[1] 0 1 2 3 4 5 6 7 8 9
+# as.character()/ as.type() will change the mode
+digits <- as.character(x)
+digits # [1] "0" "1" "2" "3" "4" "5" "6" "7" "8" "9"
+# further coercion/change of mode
+d <- as.integer(digits)
+d #[1] 0 1 2 3 4 5 6 7 8 9
+```
+There is a collection of functions of the form __as.something()__ for either coercion from one mode to other, or for investing properties of one object to other.
+
+# 3.2 Changing Length of an Object
+
+An empty object may still have a mode. Let's just say
+```{r}
+e <- numeric() # creates a numric empty vector
+e
+# can make empty vector of any type 
+```
+When an object is created the new components can be added to it. By simply added the index value outside its previous range.
+```{r}
+e[3] <- 17
+e
+# 1st two values will be empty just because we have assigned one and that one value will be the 3rd one.
+```
+
+To truncate the size of an object requires only an assignment to do so.We have an object d of length 10. To make it an object of length 5 consisting of just former components with even index in following way:
+```{r}
+d <- d[2 * 1:5]
+d
+
+```
+ We can retain the first 3 values by 
+```{r}
+length(d) <- 3
+d
+```
+ 
+# 3.3 Getting and Setting Attriutes
+The function __attributes(object_name)__ can be used to get all the non-instrinsic elements of an object.And the function __attr(object, name)__ can be used to select a specific attribute.
+
+# 3.4 Class of an Object
+All objects in R always belongs to some class which can be reported by __class__ function. 
+
+* A special attribute _class_ of the object is used to allow for an object-oriented style of programming in class.
+* The __unclass__ function is used to remobe the effect on an class from an object.
+
